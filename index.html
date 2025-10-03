@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư mời dự lễ tốt nghiệp của Lâm Nghĩa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS để trang trí cho trang web */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* THAY ĐỔI ẢNH NỀN TẠI ĐÂY */
+            background-image: url('./bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+            border-top: 5px solid #6a11cb;
+        }
+
+        .header-title {
+            font-family: 'Dancing Script', cursive;
+            color: #6a11cb;
+            font-size: 2.8rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .graduate-name {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .dear {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        #guest-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #d63384; /* Màu hồng đậm cho tên khách mời */
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        .invitation-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 25px 0;
+        }
+
+        .info-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .info-section p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .info-section strong {
+            color: #333;
+        }
+
+        .closing {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #6a11cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <h1 class="header-title">Thư mời dự lễ tốt nghiệp</h1>
+        <h2 class="graduate-name">Lâm Nghĩa</h2>
+
+        <p class="dear">Trân trọng gửi đến,</p>
+        <h3 id="guest-name">...</h3>
+
+        <p class="invitation-text">
+            Vậy là hành trình 4 năm đại học của mình đã chính thức khép lại. Để đánh dấu cho một chặng đường đầy ý nghĩa này, mình muốn chia sẻ khoảnh khắc đặc biệt trong buổi lễ tốt nghiệp cùng những người mình yêu quý.
+        </p>
+
+        <div class="info-section">
+            <p><strong>Thời gian:</strong> 08:00, Thứ Bảy, ngày 25 tháng 10 năm 2025</p>
+            <p><strong>Địa điểm:</strong> Hội trường A, Trường Đại học Khoa học Tự nhiên</p>
+            <p><strong>Liên hệ:</strong> 0123.456.789 (Lâm Nghĩa)</p>
+        </div>
+
+        <p class="closing">Sự hiện diện của bạn là niềm vinh hạnh rất lớn đối với mình!</p>
+    </div>
+
+    <script>
+        // Javascript để lấy tên từ URL và hiển thị
+        window.onload = function() {
+            // Tạo một đối tượng để quản lý các tham số URL
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Lấy giá trị của tham số 'name'
+            const guestName = urlParams.get('name');
+
+            // Tìm đến phần tử HTML có id là 'guest-name'
+            const guestNameElement = document.getElementById('guest-name');
+
+            // Nếu có tên trong URL, hiển thị tên đó
+            if (guestName) {
+                // decodeURIComponent để xử lý các ký tự đặc biệt như dấu cách (%20)
+                guestNameElement.textContent = decodeURIComponent(guestName);
+            } else {
+                // Nếu không có tên, hiển thị một giá trị mặc định
+                guestNameElement.textContent = 'Bạn và gia đình';
+            }
+        };
+    </script>
+
+</body>
+</html>
